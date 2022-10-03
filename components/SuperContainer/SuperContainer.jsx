@@ -12,16 +12,9 @@
 *
 **********************************************************************/
 
-import { Alert, Button } from '@mui/material';
+import { Switch, FormControlLabel, Radio, Checkbox, Avatar, Button, Autocomplete, TextField, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Avatar1 from 'components/Avatar1/Avatar1';
-import Switch1 from 'components/Switch1/Switch1';
-import Radio1 from 'components/Radio1/Radio1';
-import Checkbox1 from 'components/Checkbox1/Checkbox1';
-import Link1 from 'components/Link1/Link1';
-import Icon1 from 'components/Icon1/Icon1';
-import Autocomplete1 from 'components/Autocomplete1/Autocomplete1';
-import useSuperContainer from 'components/SuperContainer/useSuperContainer';
+
  
 const SuperContainer1 = styled("div")({  
   backgroundColor: `rgba(255, 255, 255, 1)`,  
@@ -30,32 +23,16 @@ const SuperContainer1 = styled("div")({
   isolation: `isolate`,  
   flexDirection: `row`,  
   justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
+  alignItems: `center`,  
   padding: `1px 24px`,  
   boxSizing: `border-box`,  
   height: "100%",  
   width: "100%",  
 });
   
-const Frame12 = styled("div")({  
-  display: `flex`,  
-  position: `relative`,  
-  isolation: `isolate`,  
-  flexDirection: `row`,  
-  justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
-  padding: `26px 24px`,  
-  boxSizing: `border-box`,  
+const FormControlLabel1 = styled(FormControlLabel)({  
   margin: `0px`,  
 });
-  
-const Avatar2 = styled(Avatar1)(({ theme }) =>({  
-  margin: `0px`,  
-}));
-  
-const Switch2 = styled(Switch1)(({ theme }) =>({  
-  margin: `0px 0px 0px 10px`,  
-}));
   
 const Frame9 = styled("div")({  
   display: `flex`,  
@@ -69,13 +46,13 @@ const Frame9 = styled("div")({
   margin: `0px 0px 0px 13px`,  
 });
   
-const Radio2 = styled(Radio1)(({ theme }) =>({  
+const FormControlLabel2 = styled(FormControlLabel)({  
   margin: `0px`,  
-}));
+});
   
-const Radio3 = styled(Radio1)(({ theme }) =>({  
+const FormControlLabel3 = styled(FormControlLabel)({  
   margin: `29px 0px 0px 0px`,  
-}));
+});
   
 const Frame10 = styled("div")({  
   display: `flex`,  
@@ -89,17 +66,17 @@ const Frame10 = styled("div")({
   margin: `0px 0px 0px 13px`,  
 });
   
-const Checkbox2 = styled(Checkbox1)(({ theme }) =>({  
+const FormControlLabel4 = styled(FormControlLabel)({  
   margin: `0px`,  
-}));
+});
   
-const Checkbox3 = styled(Checkbox1)(({ theme }) =>({  
+const FormControlLabel5 = styled(FormControlLabel)({  
   margin: `10px 0px 0px 0px`,  
-}));
+});
   
-const Checkbox4 = styled(Checkbox1)(({ theme }) =>({  
+const FormControlLabel6 = styled(FormControlLabel)({  
   margin: `10px 0px 0px 0px`,  
-}));
+});
   
 const Frame11 = styled("div")({  
   display: `flex`,  
@@ -113,60 +90,49 @@ const Frame11 = styled("div")({
   margin: `0px 0px 0px 13px`,  
 });
   
-const Link2 = styled(Link1)(({ theme }) =>({  
+const Avatar1 = styled(Avatar)({  
   margin: `0px`,  
-}));
-  
-const Icon2 = styled(Icon1)(({ theme }) =>({  
-  margin: `15px 0px 0px 0px`,  
-}));
-  
-const Avatar3 = styled(Avatar1)(({ theme }) =>({  
-  margin: `15px 0px 0px 0px`,  
-}));
-  
-const AlertFilled = styled(Alert)({  
-  width: `320px`,  
-  margin: `15px 0px 0px 0px`,  
+  width: `40px`,  
+  height: `40px`,  
 });
-  
-const Switch3 = styled(Switch1)(({ theme }) =>({  
-  margin: `15px 0px 0px 0px`,  
-}));
   
 const ButtonContained = styled(Button)({  
   margin: `15px 0px 0px 0px`,  
 });
   
-const Autocomplete2 = styled(Autocomplete1)(({ theme }) =>({  
+const Autocomplete1 = styled(Autocomplete)({  
+  width: `220px`,  
   margin: `15px 0px 0px 0px`,  
-}));
+});
+  
+const FormControlLabel7 = styled(FormControlLabel)({  
+  margin: `15px 0px 0px 0px`,  
+});
+  
+const AlertFilled = styled(Alert)({  
+  width: `320px`,  
+  margin: `15px 0px 0px 0px`,  
+});
  
 function SuperContainer(props) {
-  const {fns} = useSuperContainer();
   return (
     <SuperContainer1 className={props.className} >
-      <Frame12 >
-        <Avatar2   />
-        <Switch2   />
-      </Frame12>
+      <FormControlLabel1 control={<Switch defaultChecked={false} color="info" size="medium" />} label={"Label"} />
       <Frame9 >
-        <Radio2   />
-        <Radio3   />
+        <FormControlLabel2 control={<Radio color="primary" size="small" />} label={"Label"} />
+        <FormControlLabel3 control={<Radio color="primary" size="small" />} label={"Label"} />
       </Frame9>
       <Frame10 >
-        <Checkbox2   />
-        <Checkbox3   />
-        <Checkbox4   />
+        <FormControlLabel4 control={<Checkbox defaultChecked={false} size="medium" color="secondary" />} label={`Label`} />
+        <FormControlLabel5 control={<Checkbox defaultChecked={false} size="medium" color="secondary" />} label={`Label`} />
+        <FormControlLabel6 control={<Checkbox defaultChecked={false} size="medium" color="secondary" />} label={`Label`} />
       </Frame10>
       <Frame11 >
-        <Link2   />
-        <Icon2   />
-        <Avatar3   />
-        <AlertFilled variant="filled" severity={"error"}   > Description </AlertFilled>
-        <Switch3   />
-        <ButtonContained variant="contained" size="large" color="info"  onClick={fns.handleOnClick}  > Large </ButtonContained>
-        <Autocomplete2   />
+        <Avatar1 variant="circular" src={`assets/images/SuperContainer_Avatar.png`} alt={"Avatar"}   />
+        <ButtonContained variant="contained" size="large" color="secondary"    > Large </ButtonContained>
+        <Autocomplete1        autoHighlight disableClearable openOnFocus blurOnSelect   renderInput={(params) => ( <TextField variant="outlined" {...params} fullWidth  label={`Label`}  /> )} />
+        <FormControlLabel7 control={<Switch defaultChecked={false} color="info" size="medium" />} />
+        <AlertFilled variant="filled" severity={"success"}   > Description </AlertFilled>
       </Frame11>
     </SuperContainer1>
   );
