@@ -14,7 +14,7 @@
 
 import { Switch, FormControlLabel, Radio, Checkbox, Avatar, Button, Autocomplete, TextField, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
+import useSuperContainer from 'components/SuperContainer/useSuperContainer';
  
 const SuperContainer1 = styled("div")({  
   backgroundColor: `rgba(255, 255, 255, 1)`,  
@@ -115,6 +115,7 @@ const AlertFilled = styled(Alert)({
 });
  
 function SuperContainer(props) {
+  const {fns} = useSuperContainer();
   return (
     <SuperContainer1 className={props.className} >
       <FormControlLabel1 control={<Switch defaultChecked={false} color="info" size="medium" />} label={"Label"} />
@@ -129,7 +130,7 @@ function SuperContainer(props) {
       </Frame10>
       <Frame11 >
         <Avatar1 variant="circular" src={`assets/images/SuperContainer_Avatar.png`} alt={"Avatar"}   />
-        <ButtonContained variant="contained" size="large" color="secondary"    > Large </ButtonContained>
+        <ButtonContained variant="contained" size="large" color="secondary"  onClick={fns.handleOnClick}  > Large </ButtonContained>
         <Autocomplete1        autoHighlight disableClearable openOnFocus blurOnSelect   renderInput={(params) => ( <TextField variant="outlined" {...params} fullWidth  label={`Label`}  /> )} />
         <FormControlLabel7 control={<Switch defaultChecked={false} color="info" size="medium" />} />
         <AlertFilled variant="filled" severity={"success"}   > Description </AlertFilled>
